@@ -28,8 +28,8 @@ function Comments() {
         <form>
             <TextField id="Comments-basic" label='Comment' variant="standard" type='text' onChange={setValue} />
         </form>
-        <div className='button'>
-            <button onClick={submitComment}>Next</button>
+        <div className='buttonHolder'>
+            <button className="button" onClick={submitComment}>Next</button>
         </div>
     </>)
 }

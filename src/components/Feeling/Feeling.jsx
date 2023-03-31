@@ -31,8 +31,8 @@ function Feeling() {
         <form>
             <TextField type='number' id='Feeling-basic' label='Feeling' variant="standard" onChange={(setValue)} value={personFeeling.feeling} />
         </form>
-        <div className='button'>
-            <button onClick={submitFeeling}>Next</button>
+        <div className='buttonHolder'>
+            <button className="button" onClick={submitFeeling}>Next</button>
         </div>
     </>)
 }

@@ -32,7 +32,7 @@ function Supported() {
         <form>
                 <TextField type='number' id="Supported-baic" label='Supported' variant="standard" onChange={setValue} />
         </form>
-        <div className='button'>
+        <div className='buttonHolder'>
             <button onClick={submitSupport}>Next</button>
         </div>
     </>)

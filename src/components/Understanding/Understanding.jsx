@@ -33,7 +33,7 @@ function Understanding() {
         <form>
                 <TextField type='number' id="Understanding-basic" label='Understanding' variant="standard" onChange={setValue} />
         </form>
-        <div className='button'>
+        <div className='buttonHolder'>
         <button onClick={submitUnderstanding}>Next</button>
         </div>
     </>)
