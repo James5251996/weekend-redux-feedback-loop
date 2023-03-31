@@ -1,13 +1,14 @@
 import axios from "axios"
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useSelector } from "react-redux"
-
+import { useHistory } from "react-router-dom";
 
 
 
 
 function Review() {
     const feedback = useSelector(store => store.feedback)
+    const history = useHistory()
 
     let finalFeedback = {
         feeling: feedback.feeling,
@@ -18,15 +19,17 @@ function Review() {
 
 
 
-    // const submitReview = (finalFeedback) => {
-    //     console.log('inside my submitReview POST', finalFeedback)
-    //     axios.post('/submission')
-    //         .then((response) => {
-    //             console.log('POST WORKED CLIENT!')
-    //         }).catch((error) => {
-    //             console.log('error in client post', error)
-    //         })
-    // }
+    const submitReview = (event) => {
+        event.preventDefault();
+        console.log('inside my submitReview POST', finalFeedback)
+        axios.post('/submission', finalFeedback)
+            .then((response) => {
+                console.log('POST WORKED CLIENT!')
+                history.push('/success')
+            }).catch((error) => {
+                console.log('error in client post', error)
+            })
+    }
 
     return (<>
         <h1>Review Your Feedback</h1>
@@ -34,11 +37,7 @@ function Review() {
         <p>Understanding: {feedback.understanding}</p>
         <p>Support: {feedback.support}</p>
         <p>Comments: {feedback.comments}</p>
-        <Router>
-            <Link to='/success'>
-                <button>Submit</button>
-            </Link>
-        </Router>
+        <button onClick={submitReview}>Submit</button>
     </>)
 }
 export default Review
