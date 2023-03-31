@@ -14,15 +14,11 @@ function Comments() {
     }
 
     function submitComment() {
-        if (personComments.comments === '') {
-            alert('thats not going to work🥲')
-        } else {
             dispatch({
                 type: 'SEND_FEEDBACK',
                 payload: personComments
             })
             history.push('/review')
-        }
     }
 
 
@@ -34,7 +30,9 @@ function Comments() {
                 <input type='text' onChange={setValue} />
             </label>
         </form>
+        <div className='button'>
         <button onClick={submitComment}>Next</button>
+        </div>
     </>)
 }
 

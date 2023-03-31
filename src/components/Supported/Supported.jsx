@@ -34,7 +34,9 @@ function Supported() {
                 <input type='number' onChange={setValue} />
             </label>
         </form>
-        <button onClick={submitSupport}>Next</button>
+        <div className='button'>
+            <button onClick={submitSupport}>Next</button>
+        </div>
     </>)
 }
 

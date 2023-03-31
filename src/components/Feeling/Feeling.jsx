@@ -33,7 +33,9 @@ function Feeling() {
                 <input type='number' onChange={(setValue)} value={personFeeling.feeling} />
             </label>
         </form>
+        <div className='button'>
         <button onClick={submitFeeling}>Next</button>
+        </div>
     </>)
 }
 export default Feeling;

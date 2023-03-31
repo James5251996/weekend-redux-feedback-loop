@@ -35,7 +35,9 @@ function Understanding() {
                 <input type='number' onChange={setValue} />
             </label>
         </form>
+        <div className='button'>
         <button onClick={submitUnderstanding}>Next</button>
+        </div>
     </>)
 }
 

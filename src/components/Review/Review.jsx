@@ -32,12 +32,14 @@ function Review() {
     }
 
     return (<>
+    <div className="button">
         <h1>Review Your Feedback</h1>
         <p>Feelings: {feedback.feeling}</p>
         <p>Understanding: {feedback.understanding}</p>
         <p>Support: {feedback.support}</p>
         <p>Comments: {feedback.comments}</p>
         <button onClick={submitReview}>Submit</button>
+        </div>
     </>)
 }
 export default Review

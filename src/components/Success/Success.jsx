@@ -15,7 +15,7 @@ function Success () {
     return(<>
         <div>
             <h1>Feedback!</h1>
-            <div>
+            <div className="button">
                 <h1>Thank You🐶</h1>
                 <button onClick={returnToMain}>Leave New Feedback</button>
             </div>
