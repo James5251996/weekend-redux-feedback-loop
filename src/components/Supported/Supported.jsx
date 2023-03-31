@@ -1,24 +1,31 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Supported() {
-    const [personSupport, setPersonSupport] = useState({support: ''})
+    const [personSupport, setPersonSupport] = useState({ support: '' })
     const dispatch = useDispatch()
+    const history = useHistory()
 
-    function setValue (event) {
-        setPersonSupport({support: Number(event.target.value)})
+    function setValue(event) {
+        setPersonSupport({ support: Number(event.target.value) })
     }
 
-    function submitSupport () {
-        dispatch({
-            type: 'SEND_FEEDBACK',
-            payload: personSupport
-        })
+    function submitSupport() {
+        if (personSupport.support === '') {
+            alert('thats not going to work🥲')
+        } else {
+            dispatch({
+                type: 'SEND_FEEDBACK',
+                payload: personSupport
+            })
+            history.push('/comments')
+        }
     }
 
 
-    
+
     return (<>
         <h1>How well are you being supported?</h1>
         <form>
@@ -27,11 +34,7 @@ function Supported() {
                 <input type='number' onChange={setValue} />
             </label>
         </form>
-        <Router>
-            <Link to='/comments'>
-                <button onClick={submitSupport}>Next</button>
-            </Link>
-        </Router>
+        <button onClick={submitSupport}>Next</button>
     </>)
 }
 

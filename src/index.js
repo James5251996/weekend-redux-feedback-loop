@@ -10,6 +10,8 @@ const feedback = (state = {}, action) => {
     if(action.type === 'SEND_FEEDBACK') {
         console.log(action.payload)
         return {...state, ...action.payload};
+    } else if (action.type === 'CLEAR_FEEDBACK') {
+        return {};
     }
     return state
 }
