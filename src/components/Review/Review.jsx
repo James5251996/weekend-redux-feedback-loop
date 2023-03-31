@@ -31,6 +31,10 @@ function Review() {
             })
     }
 
+    function goBack () {
+        history.push('/comments')
+    }
+
     return (<>
         <div className="buttonHolder">
             <h1>Review Your Feedback</h1>
@@ -39,6 +43,7 @@ function Review() {
             <p>Support: {feedback.support}</p>
             <p>Comments: {feedback.comments}</p>
             <button className="button" onClick={submitReview}>Submit</button>
+            <button className="button" onClick={goBack}>Back</button>
         </div>
     </>)
 }
