@@ -3,6 +3,19 @@ const router = express.Router();
 const pool = require('../modules/pool');
 // my post request to store my data on the server
 
+router.get('/', (req, res) => {
+    const querytext = `SELECT * FROM "feedback"`
+    pool.query(querytext)
+    .then((results) => {
+        res.send(results.rows)
+    }).catch((error) => {
+        console.log('error in server GET', error)
+        res.sendStatus(500)
+    })
+})
+
+
+
 router.post('/', (req,res) => {
     let newSubmission = req.body
     const querytext = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")

@@ -8,6 +8,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import Admin from '../Admin/Admin';
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
       </Route>
       <Route path='/success'>
         <Success/>
+      </Route>
+      <Route>
+        <Admin/>
       </Route>
     </Router>
   </>)
