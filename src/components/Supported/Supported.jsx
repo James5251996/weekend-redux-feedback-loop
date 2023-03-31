@@ -24,7 +24,9 @@ function Supported() {
             history.push('/comments')
         }
     }
-
+    function goBack () {
+        history.push('/understanding')
+    }
 
 
     return (<>
@@ -33,7 +35,8 @@ function Supported() {
                 <TextField type='number' id="Supported-baic" label='Supported' variant="standard" onChange={setValue} />
         </form>
         <div className='buttonHolder'>
-            <button onClick={submitSupport}>Next</button>
+            <button className="button" onClick={submitSupport}>Next</button>
+            <button className="button" onClick={goBack}>Back</button>
         </div>
     </>)
 }

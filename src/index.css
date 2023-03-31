@@ -21,6 +21,10 @@ input{
   border-bottom: 3px solid blue;
   padding: 10px;
 }
+.button {
+  background-color: aquamarine;
+  border-radius: 5px;
+}
 
 .button:hover {
   background-color: yellow;

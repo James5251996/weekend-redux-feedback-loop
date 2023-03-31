@@ -26,6 +26,10 @@ function Understanding() {
     }
     }
 
+    function goBack () {
+        history.push('/')
+    }
+
 
 
     return (<>
@@ -34,7 +38,8 @@ function Understanding() {
                 <TextField type='number' id="Understanding-basic" label='Understanding' variant="standard" onChange={setValue} />
         </form>
         <div className='buttonHolder'>
-        <button onClick={submitUnderstanding}>Next</button>
+        <button className="button" onClick={submitUnderstanding}>Next</button>
+        <button className="button" onClick={goBack}>Back</button>
         </div>
     </>)
 }

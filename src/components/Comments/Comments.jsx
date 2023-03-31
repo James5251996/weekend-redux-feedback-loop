@@ -21,7 +21,9 @@ function Comments() {
         })
         history.push('/review')
     }
-
+    function goBack () {
+        history.push('/supported')
+    }
 
     return (<>
         <h1>Any comments you want to leave?</h1>
@@ -30,6 +32,7 @@ function Comments() {
         </form>
         <div className='buttonHolder'>
             <button className="button" onClick={submitComment}>Next</button>
+            <button className="button" onClick={goBack}>Back</button>
         </div>
     </>)
 }
