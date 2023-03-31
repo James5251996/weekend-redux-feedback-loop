@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { TextField } from "@mui/material";
 
 function Feeling() {
     const [personFeeling, setPersonFeeling] = useState({ feeling: '' })
@@ -28,13 +29,10 @@ function Feeling() {
     return (<>
         <h1>How are you feeling today</h1>
         <form>
-            <label>
-                Feeling?
-                <input type='number' onChange={(setValue)} value={personFeeling.feeling} />
-            </label>
+            <TextField type='number' id='Feeling-basic' label='Feeling' variant="standard" onChange={(setValue)} value={personFeeling.feeling} />
         </form>
         <div className='button'>
-        <button onClick={submitFeeling}>Next</button>
+            <button onClick={submitFeeling}>Next</button>
         </div>
     </>)
 }

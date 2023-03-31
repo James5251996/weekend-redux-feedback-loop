@@ -11,4 +11,10 @@ h1 {
 }
 .button {
   text-align: center;
+  padding: 10px;
+}
+input{
+  border: none;
+  border-bottom: 3px solid blue;
+  padding: 10px;
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { TextField } from "@mui/material";
 
 
 function Understanding() {
@@ -30,10 +31,7 @@ function Understanding() {
     return (<>
         <h1>How well are you understnding the content?</h1>
         <form>
-            <label>
-                Understanding
-                <input type='number' onChange={setValue} />
-            </label>
+                <TextField type='number' id="Understanding-basic" label='Understanding' variant="standard" onChange={setValue} />
         </form>
         <div className='button'>
         <button onClick={submitUnderstanding}>Next</button>
