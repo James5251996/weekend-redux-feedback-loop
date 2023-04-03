@@ -39,7 +39,7 @@ function App() {
       <Route path='/success'>
         <Success/>
       </Route>
-      <Route>
+      <Route path='/admin'>
         <Admin/>
       </Route>
     </Router>
